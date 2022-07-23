@@ -1,0 +1,145 @@
+<html lang="ru"> 
+  <head>    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../img/fav/fav.ico" type="image">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/fav/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <title>Последние обновления на сайте</title>
+  </head>
+  <body>	   
+    <header>
+      <nav class="navbar navbar-light" style="background-color: lightskyblue">
+        <div class="container">
+          <a class="navbar-brand" href="../posts/index.html">
+            <img src="../img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            <span style="color:red">Ya</span>tube
+          </a>        
+          <ul class="nav  nav-pills">
+            <li class="nav-item">              
+              <a class="nav-link" href="../about/author.html">
+                Об авторе
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../about/tech.html">
+                Технологии
+              </a>
+            </li>
+            <!-- пункты меню видны только авторизованному пользователю -->
+            <li class="nav-item">
+              <a class="nav-link" href="../posts/create_post.html">
+                Новая запись
+              </a>
+            </li>
+            <li class="nav-item"> 
+              <a class="nav-link link-light " href="../users/password_change_form.html">
+                Изменить пароль
+              </a>
+            </li>
+            <li class="nav-item"> 
+              <a class="nav-link link-light" href="../users/logged_out.html">Выйти</a>
+            </li>
+            <li>
+              Пользователь: leo
+            <li>
+            <!-- конец пункты меню видны только авторизованному пользователю -->
+            <!-- пункты меню видны только неавторизованному пользователю -->
+            <li class="nav-item"> 
+              <a class="nav-link link-light" href="../users/login.html">
+                Войти
+              </a>
+            </li>
+            <li class="nav-item"> 
+              <a class="nav-link link-light " href="../users/signup.html">Регистрация</a>
+            </li>
+            <!-- конец пункты меню видны только неавторизованному пользователю -->        
+          </ul>      
+        </div>
+      </nav> 
+    </header>
+    <main>
+      <div class="container py-5">        
+        <!-- все посты перебираются в цикле -->
+        <article>
+          <ul>
+            <li>
+              Автор: Лев Толстой
+              <a href="../posts/profile.html">все посты пользователя</a>
+            </li>
+            <li>
+              Дата публикации: 31 июля 1854 
+            </li>
+          </ul>
+          <p>
+            [Фокшаны.] Еще переходъ до Фокшанъ, во время котораго я ѣхалъ съ Монго. 
+            Человѣкъ пустой, но съ твердыми, хотя и ложными убѣжденіями. Генерал[у] 
+            по этому должно быть случаю, угодно было спрашивать о моемъ здоровьи. 
+            Свинья! К[о]вырялъ носъ и ничего не написалъ — вотъ 2 упрека за нын[ѣшній] 
+            день. Послѣдній упрекъ становится слишкомъ частъ, хотя походъ и можетъ 
+            служить въ немъ отчасти извиненіемъ. Отношенія мои съ товарищами становятся 
+            такъ пріятны, что мнѣ жалко бросить штабъ. Здоровье кажется (2) лучше. 
+          </p>
+          <a href="../posts/post_detail.html">подробная информация</a>
+        </article>       
+        <a href="../posts/group_list.html">все записи группы</a>        
+        <hr>
+        <article>
+          <ul>
+            <li>
+              Автор: Лев Толстой
+              <a href="../posts/profile.html">все посты пользователя</a>
+            </li>
+            <li>
+              Дата публикации: 30 июля 1854 
+            </li>
+          </ul>
+          <p>
+            Рымник.] Сдѣлалъ верхомъ переходъ до Рымника. [[5]] Старикъ все не кланяется 
+            мнѣ. Обѣ вещи эти злятъ меня. Съ встрѣчавшимися баши-бузуками велъ себя хорошо. 
+            Объяснился съ Крыжановскимъ. Онъ, не знаю зачѣмъ, совѣтуетъ мнѣ 
+            прикомандироваться къ казачьей батареѣ; совѣтъ, которому я не послѣдую. 
+            Желчно спорилъ вечеромъ съ Фриде и Бабарыкинымъ, ругалъ Сержпутовскому и 
+            ничего не сдѣлалъ, вотъ 3 упрека, которыя дѣлаю себѣ за нынѣшній день. (3)
+          </p>
+          <a href="../posts/post_detail.html">подробная информация</a>
+        </article>       
+        <a href="../posts/group_list.html">все записи группы</a>    
+        <!-- нет черты после последнего поста -->
+        <!-- если записей больше 10 -- подключён паджинатор -->
+        <nav class="my-5">
+          <ul class="pagination">    
+            <li class="page-item">
+              <a class="page-link" href="#0">Первая</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#0">Предыдущая</a>
+            </li>
+            <li class="page-item active">
+              <span class="page-link">1</span>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#0">2</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#0">3</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#0">Следующая</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#0">Последняя</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </main>
+    <footer class="border-top text-center py-3">
+      <p>© 2021 Copyright <span style="color:red">Ya</span>tube</p>    
+    </footer>
+  </body>
+</html>

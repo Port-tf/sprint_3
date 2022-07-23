@@ -1,0 +1,13 @@
+{% extends 'base2.html' %}
+
+{% block title %}Когда-то написал Есенин{% endblock %}
+
+{% block author %} <h1>{{ author.name }}</h1> {% endblock %}
+{% block post_1 %}
+{% for poem in poems %}
+  <p>Добавил: <a href="{% url 'posts:name_user' poem.user.username %}">{{ poem.user.username }}</a></p>
+  <p>{{ poem.text | linebreaksbr | truncatewords:8 }}</p>
+  <a href="{% url 'posts:poem' poem.pk %}">Прочитать</a>
+  <hr>
+{% endfor %} 
+{% endblock %}

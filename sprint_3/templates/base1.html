@@ -1,0 +1,22 @@
+<html>
+  <head>
+    {% include 'includes/head.html' %}
+    <title>{% block title %}Поэзия{% endblock %}</title>
+  </head>
+  <body>
+    {% include 'includes/header_1.html' %}
+    <main> 
+      <div class="container py-5">     
+        <h1>Поэзия, которую знают все.</h1>
+        {% block post_1 %}
+        {% endblock %}
+        {% block post_2 %}
+        {% endblock %}
+        {% block post_3 %}
+        {% endblock %}
+        <hr>
+      </div>  
+    </main>
+    {% include 'includes/footer.html' %}
+  </body>
+</html>

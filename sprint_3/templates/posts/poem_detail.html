@@ -1,0 +1,11 @@
+{% extends 'base2.html' %}
+
+{% block title %}Произведение {{ poem.author.name }}{% endblock %}
+
+{% block author %} 
+  <h3><a href="{% url 'posts:author' poem.author.name_url %}">{{ poem.author.name }}</a></h3> 
+{% endblock %}
+{% block post_1 %}
+  <p>Добавил: <a href="{% url 'posts:name_user' poem.user.username %}">{{ poem.user.username }}</a></p>
+  {{ poem.text | linebreaksbr }}
+{% endblock %}

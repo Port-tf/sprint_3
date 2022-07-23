@@ -1,0 +1,18 @@
+<html>
+  <head>
+    {% include 'includes/head.html' %}
+    <title>{% block title %}Поэзия 21 века{% endblock %}</title>
+  </head>
+  <body>
+    {% include 'includes/header_2.html' %}
+    <main> 
+      <div class="container py-5">     
+        {% block author %}<h1>Стихи современников</h1>{% endblock %} 
+        {% block post_1 %}
+          <p>В базе пока нет стихой современников.</p>
+        {% endblock %}
+      </div>  
+    </main>
+    {% include 'includes/footer.html' %}
+  </body>
+</html>

@@ -1,0 +1,18 @@
+{% extends 'base1.html' %}
+{% comment %} При подключении базового шаблона, переданные блоки найдут
+свои места в базовом шаблоне по имени и отобразятся там где для них
+установлена закладка {% endcomment %}
+
+{% block post_3 %}
+  {% include 'posts/poems/poem3.html' %}
+{% endblock %}
+
+{% block post_1 %}
+  {% include 'posts/poems/poem1.html' %}
+{% endblock %}
+
+{% block title %}Когда-то написал Есенин{% endblock %}
+
+{% block post_2 %}
+  {% include 'posts/poems/poem2.html' %}
+{% endblock %}

@@ -8,7 +8,9 @@ User = get_user_model()
 
 class Author(models.Model):
     name = models.CharField('Автор произведения', max_length=100)
-    name_url = models.CharField(verbose_name='Страница автора', max_length=30)
+    name_url = models.CharField(
+        verbose_name='Страница кекосика', unique=True, max_length=30
+    )
     description = models.TextField(blank=True, verbose_name='Справка о писателе')
 
     def __str__(self): 

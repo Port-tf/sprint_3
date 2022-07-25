@@ -2,7 +2,10 @@
 
 {% block title %}Стихи {{ author.first_name }} {{ author.last_name }}{% endblock %}
 
-{% block author %} <h1>{{ author.first_name }} {{ author.last_name }}</h1> {% endblock %}
+{% block author %} 
+  <h1>{{ author.first_name }} {{ author.last_name }}</h1>
+  <p><a href="{% url 'posts:biografy' author.description.name %}">Краткая биография автора:</a> {{ author.description.text | linebreaksbr | truncatewords:8 }}</p>
+{% endblock %}
 {% block post_1 %}
 {% for poem in poems %}
   <p>Добавил: <a href="{% url 'posts:name_user' poem.user.username %}">

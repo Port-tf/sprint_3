@@ -12,8 +12,8 @@
 <p>Родился: {{ user.birthday }}</p>
 <p>Перестал творить: {{ user.date_of_death }}</p>
 <p>Краткая биография автора: {{ user.text | linebreaksbr }}</p>
-  {% comment %} <p>Добавил: <a href="{% url 'posts:name_user' poem.user.username %}">{{ poem.user.first_name }} {{ poem.user.last_name }}</a></p> {% endcomment %}
-  <h4>Последнее добавленое произведение автора на сайт:</h4>
-  <p>{{ poem.text | linebreaksbr }}</p>
-  <a href="{% url 'posts:poem' poem.id %}">Прочитать</a>
+<hr>
+<h4>Последнее добавленное произведение автора на сайт:</h4>
+<p>{{ poem.text | linebreaksbr | truncatewords:15 }}</p>
+<a href="{% url 'posts:poem' poem.id %}">Прочитать</a>
 {% endblock %}

@@ -4,8 +4,7 @@
 
 {% block author %} 
   <h3><a href="{% url 'posts:author' poem.author.name_url %}">{{ poem.author.first_name }} {{ poem.author.last_name }}</a></h3>
-  <p>Краткая биография автора: {{ poem.author.description.text | linebreaksbr | truncatewords:8 }}</p>
-  <a href="{% url 'posts:biografy' poem.author.description.name %}">Прочитать</a>
+  <p><a href="{% url 'posts:biografy' poem.author.description.name %}">Краткая биография автора:</a> {{ poem.author.description.text | linebreaksbr | truncatewords:8 }}</p>
 {% endblock %}
 {% block post_1 %}
   <p>Добавил: <a href="{% url 'posts:name_user' poem.user.username %}">{{ poem.user.first_name }} {{ poem.user.last_name }}</a></p>

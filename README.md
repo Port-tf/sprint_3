@@ -32,12 +32,15 @@ urls.py, views.py
 / - обрабатывается view poems, рендерится шаблон posts/poems.html c контекстом (все произведения)
 
 poems/<str:web_name>/ - аргумент web_name = name_url модели Author, обрабатывается view poem_author,
-рендерится шаблон posts/poem_author.html c контекста (все произведения автора)
+рендерится шаблон posts/poem_author.html c контекстом (все произведения автора)
 
 poem/<int:argument_id>/ - аргумент argument_id = pk модели Poem, обрабатывается view post_detail,
-рендерится шаблон posts/poem_author.html c контекста (выбранное произведения автора)
+рендерится шаблон posts/poem_author.html c контекстом (выбранное произведения автора)
 
 users/<str:user_name>/ - аргумент user_name = username модели User, обрабатывается view poem_user,
-рендерится шаблон posts/poem_user.html c контекста (все произведения добавленные пользоваетлем)
+рендерится шаблон posts/poem_user.html c контекстом (все произведения добавленные пользоваетлем)
+
+'biorafy/<str:name>/' - аргумент name = name модели Biografy, обрабатывается view biografy,
+рендерится шаблон posts/biografy.html c контекстом (биография автора, последние добавленное произведение автора)
 
 Попытка вклинится!

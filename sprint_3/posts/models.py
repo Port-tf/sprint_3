@@ -1,4 +1,3 @@
-
 from django.db import models
 from django.contrib.auth import get_user_model
 
@@ -6,13 +5,30 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 
 
-class Author(models.Model):
-    name = models.CharField('Автор произведения', max_length=100)
-    name_url = models.CharField(verbose_name='Страница автора', max_length=30)
-    description = models.TextField(blank=True, verbose_name='Справка о писателе')
+class Biografy(models.Model):
+    name = models.CharField('Автор', max_length=100)
+    birthday = models.DateField('Дата рождения', null=True, blank=True)
+    date_of_death = models.DateField('Дата смерти', null=True, blank=True)
+    text = models.TextField('Имформация о жизни')
 
     def __str__(self): 
-        return self.name[:20]
+        return self.name
+
+
+class Author(models.Model):
+    first_name = models.CharField('Имя Автора', max_length=100)
+    last_name = models.CharField('Фамилия Автора', max_length=100)
+    name_url = models.CharField(verbose_name='Страница автора', max_length=30, unique=True)
+    description = models.OneToOneField(
+        Biografy,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='bio',
+        verbose_name='Справка о писателе')
+
+    def __str__(self): 
+        return f'{self.first_name} {self.last_name}'
 
 
 class Poem(models.Model):

@@ -5,9 +5,9 @@
 {% block post_1 %}
 {% for poem in poems %}
   <a href="{% url 'posts:author' poem.author.name_url %}">
-    <h3>{{ poem.author.name }}</h3>
+    <h3>{{ poem.author.first_name }} {{ poem.author.first_name }}</h3>
   </a>
-  <p>Добавил: <a href="{% url 'posts:name_user' poem.user.username %}">{{ poem.user.username }}</a></p>
+  <p>Добавил: <a href="{% url 'posts:name_user' poem.user.username %}">{{ poem.user.first_name }} {{ poem.user.last_name }} </a></p>
   <p>{{ poem.text | linebreaksbr | truncatewords:8}}</p>
   <a href="{% url 'posts:poem' poem.pk %}">Прочитать</a>
   <hr>

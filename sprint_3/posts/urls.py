@@ -14,6 +14,7 @@ urlpatterns = [
     path('poems/<str:web_name>/', views.poem_author, name='author'),
     path('poem/<int:argument_id>/', views.post_detail, name='poem'),
     path('users/<str:user_name>/', views.poem_user, name='name_user'),
+    path('biorafy/<str:name>/', views.biografy, name='biografy'),
     path('default/', views.default),
 
 ]

@@ -1,12 +1,12 @@
 {% extends 'base2.html' %}
 
-{% block title %}Любитель {{ user.username }} {% endblock %}
+{% block title %}Любитель {{ user.first_name }} {{ user.last_name }} {% endblock %}
 
-{% block author %} <h1>Добавил: {{ user.username }}</h1> {% endblock %}
+{% block author %} <h3>Добавил: {{ user.first_name }} {{ user.last_name }}</h3> {% endblock %}
 {% block post_1 %}
-{% for poem in poems %}
+{% for poem in poemsis %}
   <a href="{% url 'posts:author' poem.author.name_url %}">
-    <h3>{{ poem.author.name }}</h3>
+    <h4>{{ poem.author.first_name }} {{ poem.author.last_name }}</h4>
   </a>
   {{ poem.text | linebreaksbr | truncatewords:8 }}
   <p><a href="{% url 'posts:poem' poem.pk %}">Прочитать</a></p>

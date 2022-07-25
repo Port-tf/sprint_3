@@ -1,11 +1,13 @@
 {% extends 'base2.html' %}
 
-{% block title %}Произведение {{ poem.author.name }}{% endblock %}
+{% block title %}Произведение {{ poem.author.first_name }} {{ poem.author.last_name }}{% endblock %}
 
 {% block author %} 
-  <h3><a href="{% url 'posts:author' poem.author.name_url %}">{{ poem.author.name }}</a></h3> 
+  <h3><a href="{% url 'posts:author' poem.author.name_url %}">{{ poem.author.first_name }} {{ poem.author.last_name }}</a></h3>
+  <p>Краткая биография автора: {{ poem.author.description.text | linebreaksbr | truncatewords:8 }}</p>
+  <a href="{% url 'posts:biografy' poem.author.description.name %}">Прочитать</a>
 {% endblock %}
 {% block post_1 %}
-  <p>Добавил: <a href="{% url 'posts:name_user' poem.user.username %}">{{ poem.user.username }}</a></p>
+  <p>Добавил: <a href="{% url 'posts:name_user' poem.user.username %}">{{ poem.user.first_name }} {{ poem.user.last_name }}</a></p>
   {{ poem.text | linebreaksbr }}
 {% endblock %}

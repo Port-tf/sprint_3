@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse
 
-from .models import Author, Poem, User
+from .models import Author, Biografy, Poem, User
 
 
 def default(request):
@@ -45,6 +45,15 @@ def poem_user(request, user_name):
     poems = user.poems.all()  # .first()
     context = {
         'user': user,
-        'poems': poems,
+        'poemsis': poems,
     }
     return render(request, 'posts/poem_user.html', context)
+
+def biografy(request, name):
+    biografy = get_object_or_404(Biografy, name=name)
+    poem_last = Author.objects.get(id=biografy.bio.id).poems.last()
+    context = {
+        'user': biografy,
+        'poem': poem_last,
+    }
+    return render(request, 'posts/biografy.html', context)

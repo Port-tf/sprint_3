@@ -51,7 +51,8 @@ def poem_user(request, user_name):
 
 def biografy(request, name):
     biografy = get_object_or_404(Biografy, name=name)
-    poem_last = Author.objects.get(id=biografy.bio.id).poems.last()
+    poem_last = biografy.bio.poems.last()
+    # poem_last = Author.objects.get(id=biografy.bio.id).poems.last()
     context = {
         'user': biografy,
         'poem': poem_last,

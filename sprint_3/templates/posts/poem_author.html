@@ -4,7 +4,9 @@
 
 {% block author %} 
   <h1>{{ author.first_name }} {{ author.last_name }}</h1>
+  {% if author.description %}
   <p><a href="{% url 'posts:biografy' author.description.name %}">Краткая биография автора:</a> {{ author.description.text | linebreaksbr | truncatewords:8 }}</p>
+  {% endif %}
 {% endblock %}
 {% block post_1 %}
 {% for poem in poems %}

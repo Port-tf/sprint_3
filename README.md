@@ -27,9 +27,8 @@ admin.py\
 
 ## 3 Часть
 ### urls.py, views.py
-_ _В шаблоне base2.html заменить инклюд с header_2.html на header_3.html_ _
-urls.py, views.py
-Урлс базовый, урлс приложения, аргументы в адресе, вьюс приложения, ORM, basename и name
+_ _В шаблоне base2.html заменить инклюд с header_2.html на header_3.html_ _\
+### Урлс базовый, урлс приложения, аргументы в адресе, вьюс приложения, ORM, basename и name
 
 / - обрабатывается view poems, рендерится шаблон posts/poems.html c контекстом (все произведения)
 
@@ -45,4 +44,5 @@ users/<str:user_name>/ - аргумент user_name = username модели User
 'biorafy/<str:name>/' - аргумент name = name модели Biografy, обрабатывается view biografy,
 рендерится шаблон posts/biografy.html c контекстом (биография автора, последние добавленное произведение автора)
 
-Попытка вклинится!
+### Бонус:
+Примеры запросов с использованием related_name во вью-функции и в шаблоне

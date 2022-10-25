@@ -1,31 +1,33 @@
 # sprint_3
-Материалы для вебинара
+##### Материалы для вебинара
 
-1 Часть
-Шаблон base.html, include, extends, block
+## 1 Часть
+##### Шаблон base.html, include, extends, block
 
-Шаблоны:
-base_base.html - неразнесенный html
-base1.html - подключены инклюды(head.html, header_1.html, footer.html), применяется для index_1.html
-base2.html - подключены инклюды(head.html, header_2.html, footer.html), применяется для index_2.html
+### Шаблоны:
+base_base.html - неразнесенный html\
+base1.html - подключены инклюды(head.html, header_1.html, footer.html), применяется для index_1.html\
+base2.html - подключены инклюды(head.html, header_2.html, footer.html), применяется для index_2.html\
 index_1.html - имеет три block, содержимое блоков подключено через инклюды из
-папки posts/poems/. Блоки специально переданы в хаотичном порядке
-index_2.html - имеет один пустой блок, вывод - дефолтная строка
+папки posts/poems/. Блоки специально переданы в хаотичном порядке\
+index_2.html - имеет один пустой блок, вывод - дефолтная строка\
 
-url:
-b1/ - обрабатывается view index_1, рендерится шаблон index_1.html без контекста
-b2/ - обрабатывается view index_1, рендерится шаблон index_2.html без контекста
-default/ - обрабатывается view default, возвращает HttpResponse:
+### url:
+b1/ - обрабатывается view index_1, рендерится шаблон index_1.html без контекста\
+b2/ - обрабатывается view index_1, рендерится шаблон index_2.html без контекста\
+default/ - обрабатывается view default, возвращает HttpResponse:\
 простая передача строки с какой-то информацией
 
-2 Часть Модели и База данных
-models.py
-Модели Poem и Author (поля, связи, атрибуты)
-admin.py
-Админка
+## 2 Часть 
+### Модели и База данных
+models.py\
+Модели Poem и Author (поля, связи, атрибуты)\
+admin.py\
+Админка\
 
-3 Часть
-В шаблоне base2.html заменить инклюд с header_2.html на header_3.html
+## 3 Часть
+### urls.py, views.py
+_ _В шаблоне base2.html заменить инклюд с header_2.html на header_3.html_ _
 urls.py, views.py
 Урлс базовый, урлс приложения, аргументы в адресе, вьюс приложения, ORM, basename и name
 

@@ -17,4 +17,5 @@ urlpatterns = [
     path('biorafy/<str:name>/', views.biografy, name='biografy'),
     path('default/', views.default),
 
+
 ]
